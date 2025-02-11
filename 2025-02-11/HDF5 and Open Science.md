@@ -83,6 +83,7 @@ Example: [DOE Water Power Technology Office's (WPTO) US Wave dataset](https://ww
 
 ### Python modules
 
+- `h5py`, `h5pyd`
 - `rdflib`
 - `requests`
 - `openai`
