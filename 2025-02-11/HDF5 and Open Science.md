@@ -79,7 +79,25 @@ When integrated effectively, they form a powerful infrastructure that enhances d
 
 Example: [DOE Water Power Technology Office's (WPTO) US Wave dataset](https://www.wikidata.org/wiki/Q131989949)
 
+## Tools to get started
+
+### Python modules
+
+- `rdflib`
+- `requests`
+- `openai`
+- `SPARQLWrapper`
+- `torch`, `torch_geometric`, `sklearn`
+
+### Misc.
+
+- [Wikidata Query Service](https://query.wikidata.org/)
+- [Wikidata:Schemas](https://www.wikidata.org/wiki/Wikidata:Schemas)
+- [ShEx2 — Simple Online Validator](https://shex-simple.toolforge.org/wikidata/packages/shex-webapp/doc/shex-simple.html)
+
 ## Questions?
+
+- [Email me](mailto:gheber@hdfgroup.org) if you want to collaborate on this!
 
 ## References
 
