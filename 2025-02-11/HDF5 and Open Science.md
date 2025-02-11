@@ -94,6 +94,7 @@ Example: [DOE Water Power Technology Office's (WPTO) US Wave dataset](https://ww
 - [Wikidata Query Service](https://query.wikidata.org/)
 - [Wikidata:Schemas](https://www.wikidata.org/wiki/Wikidata:Schemas)
 - [ShEx2 — Simple Online Validator](https://shex-simple.toolforge.org/wikidata/packages/shex-webapp/doc/shex-simple.html)
+- [Kaggle](https://www.kaggle.com/search?q=HDF5+sortBy%3Adate)
 
 ## Questions?
 
