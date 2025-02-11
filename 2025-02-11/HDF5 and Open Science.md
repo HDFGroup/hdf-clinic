@@ -26,6 +26,8 @@ When people say that *"HDF5 data is available on the network,"* it can mean a fe
 - **Public/Shared Data Repositories:** The HDF5 file is placed in a data repository or platform (e.g., Zenodo, Figshare, an institutional data portal) that makes it publicly available over the internet. Interested users can download the .h5 file or subsets of its contents. Anyone can retrieve a complete copy of the HDF5 file. Researchers often use this to disseminate large datasets for reproducibility. License agreements might control access and usage, but technically, it’s still a direct download link. 
 - **Cloud‐Native Object Stores:** HDF5 structures (e.g., chunked data, metadata) may be stored in a cloud object store (e.g., AWS S3, Azure Blob Storage, or Google Cloud Storage). Users or applications then read data objects remotely from cloud-optimized HDF5 files or, sometimes, using libraries tailored for cloud read/write operations (e.g., h5pyd with HSDS). To avoid downloading entire files, data can be distributed across many storage nodes, with partial or “lazy” reads. Performance depends on the I/O patterns and network bandwidth/latency. Authentication and encryption are usually handled at the cloud service layer.
 
+> While there seems to be no shortage of technical solutions for different use cases and environments, they all share a common problem: the _"Internet without search engines and semantics"_ problem. The data is neatly stored in disconnected silos that are known only to insiders, usable for specific purposes only, and no machine-readable metadata is on hand. 
+
 ## References
 
 1. *Reinventing Discovery: The New Era of Networked Science.* By Michael Nielsen, Princeton University Press, 2018.
