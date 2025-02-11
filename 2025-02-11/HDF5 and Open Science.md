@@ -2,7 +2,7 @@
 
 ## Open Science
 
-IMHO, it's a misnomer: it puts the cart before the horse by emphasizing the means (open practices; see [4]) rather than the end (reinventing discovery; see [1]).
+Wet (liquid) water? IMHO, it's a misnomer: it puts the cart before the horse by emphasizing the means (open practices; see [4]) rather than the end (reinventing discovery; see [1]).
 
 ## HDF5's Key Contributions to Open Science
 
