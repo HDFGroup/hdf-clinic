@@ -77,9 +77,15 @@ When integrated effectively, they form a powerful infrastructure that enhances d
 
 ![HDF5 KG RAG](./HDF5%20KG%20RAG.png)
 
+Example: [DOE Water Power Technology Office's (WPTO) US Wave dataset](https://www.wikidata.org/wiki/Q131989949)
+
+## Questions?
+
 ## References
 
 1. *Reinventing Discovery: The New Era of Networked Science.* By Michael Nielsen, Princeton University Press, 2018.
 2. [Wikidata](https://www.wikidata.org/wiki/Wikidata:Main_Page)
 3. [Retrieval-augmented generation (Wikipedia)](https://en.wikipedia.org/wiki/Retrieval-augmented_generation)
 4. [Open science (Wikipedia)](https://en.wikipedia.org/wiki/Open_science)
+5. [SEEKCommons](https://seekcommons.org/)
+6. [IOWarp](https://grc.iit.edu/research/projects/iowarp/)
