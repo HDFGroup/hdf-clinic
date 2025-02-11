@@ -99,6 +99,7 @@ Example: [DOE Water Power Technology Office's (WPTO) US Wave dataset](https://ww
 ## Questions?
 
 - [Email me](mailto:gheber@hdfgroup.org) if you want to collaborate on this!
+- **ChatGPT update:** Given the BNF representation [*An Example of an HDF5 File in DDL*](https://support.hdfgroup.org/documentation/hdf5/latest/_d_d_l_b_n_f114.html), `ChatGPT o3-mini-high` was able to generate a C program that creates an HDF5 file whose `h5dump` output matches. (It contains only two interesting mistakes: the first VLEN sequence in `/dset3` is empty, and the in-memory datatype for `/group1/dset3` is wrong on little-endian architectures.) 
 
 ## References
 
