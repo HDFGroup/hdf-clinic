@@ -75,7 +75,7 @@ When integrated effectively, they form a powerful infrastructure that enhances d
 
 ## Use Case
 
-![HDF5 KG RAG](./HDF5 KG RAG.png)
+![HDF5 KG RAG](./HDF5%20KG%20RAG.png)
 
 ## References
 
