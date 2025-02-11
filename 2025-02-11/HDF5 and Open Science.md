@@ -64,14 +64,18 @@ Combining HDF5 and knowledge graphs can create a powerful ecosystem for storing,
     - Combined Benefit: When large datasets are stored in HDF5, but described and linked through a knowledge graph, they become more discoverable, interoperable, and reusable—directly supporting Open Science and FAIR practices. 
 
 5. **Reproducibility and Data Provenance**
-    - Capturing the Full Workflow: A knowledge graph can document workflow steps, computational pipelines, software versions, and parameter settings. Each step’s output is an HDF5 dataset, explicitly linked via the graph. This makes it easier for others to replay or validate analysis steps, addressing one of the central challenges in Open Science: reproducibility. 
+    - [Capturing the Full Workflow](https://www.protocols.io/): A knowledge graph can document workflow steps, computational pipelines, software versions, and parameter settings. Each step’s output is an HDF5 dataset, explicitly linked via the graph. This makes it easier for others to replay or validate analysis steps, addressing one of the central challenges in Open Science: reproducibility. 
     - Persistent Identifiers (PIDs): Assigning DOIs or other PIDs to HDF5 files, and referencing these in the knowledge graph, provides a persistent link to the data. The knowledge graph can also record versioning information, so if a dataset is updated, the graph maintains a chain of historical references. 
 
 6. **Community Platforms and Tooling**
     - Automated Ingestion: Tools could automatically parse HDF5 files, extract metadata (e.g., dimension sizes, variable names, units), and push these details into a knowledge graph. This streamlines data curation, reducing the manual overhead for researchers to maintain high-quality metadata. 
     - Public Knowledge Graphs: Platforms like Wikidata or Open Research Knowledge Graph (ORKG) could ingest references to large HDF5 datasets, making them more visible and linkable. Researchers worldwide could discover, query, and connect these datasets without needing specialized domain knowledge of their original repository. 
 
-When integrated effectively, they form a powerful infrastructure that enhances data discovery, supports reproducibility, and accelerates collaborative research—all core pillars of Open Science. By adopting this two-pronged approach—storing the data in an open, high-performance format and describing/connecting it via a knowledge graph—researchers can foster more transparent, accessible, and impactful scientific outcomes. 
+When integrated effectively, they form a powerful infrastructure that enhances data discovery, supports reproducibility, and accelerates collaborative research—all core pillars of Open Science. By adopting this two-pronged approach—storing the data in an open, high-performance format and describing/connecting it via a knowledge graph—researchers can foster more transparent, accessible, and impactful scientific outcomes.
+
+## Use Case
+
+[./HDF5 KG RAG.png]
 
 ## References
 
