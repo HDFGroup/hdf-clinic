@@ -35,6 +35,8 @@ What kind of problem are we dealing with?
 | The best recipes give good results every time     | There is a high degree of certainty of outcome       | Uncertainty of outcome remains     |
 | Optimistic approach to problem possible     | Optimistic approach to problem possible       | Optimistic approach to problem possible     |
 
+This looks like a problem that has traits of a complicated problem, but that can be broken up into a set of simple steps.
+
 ## How
 
 - Common Lisp: Read chapters 24 and 25 in [Practical Common Lisp](https://gigamonkeys.com/book/) by Peter Seibel
@@ -77,6 +79,7 @@ With these caveats, here is a [link](https://chatgpt.com/share/67ebf358-eb30-800
 - The code snippets are riddled with errors
 - The logic/structure is sound, but have the `poke` manual handy if you want to try the suggestions
 - I have not tried this, but a Custom GPT might help this (I'll report back next time)
+- Maybe a more code-centric model (`o3-mini-high`) would yield better results
 
 
 ## Next Steps
