@@ -1,5 +1,7 @@
 # A Machine-Readable File Format Specification for HDF5
 
+> People's language reflects reality; LLM's language reflects people. (Prompt Engineering for LLMs, O'Reilly)
+
 ## What
 
 It's a formal description of a file format that is structured in a way that software tools (i.e. machines) can parse, analyze, and often use directly—for example, to read, write, validate, or generate files that conform to that format.
