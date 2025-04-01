@@ -43,3 +43,7 @@ How about asking [ChatGPT](https://chatgpt.com/) for a helping hand? Worst case:
 ### Problem 2: Parsing Datatype Messages
 
 ### Problem 3: ???
+
+## Next Steps
+
+Let's build a few useful tools together! Interested? Email [me](mailto:gheber@hdfgroup.org)! 
