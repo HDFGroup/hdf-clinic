@@ -17,14 +17,30 @@ Key Features of Machine-Readable Specifications:
 - **Trust:** Owners/maintainers don't play footsie with the spec.
 - **Portability:** Makes format specs portable across languages, systems, and teams.
 - **Maintainability:** (Ideally) Changes to the spec propagate automatically to tooling.
-Validation & Debugging:** It is Easier to verify whether a file conforms to the spec and whether an implementation makes assumptions beyond the spec.
+- **Validation & Debugging:** It is Easier to verify whether a file conforms to the spec and whether an implementation makes assumptions beyond the spec.
 - **Reverse Engineering:** Helps document legacy or proprietary formats.
+
+## Simple, Complicated, and Complex Problems
+
+What kind of problem are we dealing with?
+
+**Source:** [Complicated and Complex Systems: What Would Successful Reform of Medicare Look Like?](https://publications.gc.ca/collections/Collection/CP32-79-8-2002E.pdf)
+
+| Following a Recipe | Sending a Rocket to the Moon | Raising a Child |
+| :---         |     :---:      |          ---: |
+| The recipe is essential   | Formulae are critical and necessary     | Formulae have a limited application    |
+| Recipes are tested to assure easy replication     | Sending one rocket increases assurance that the next will be OK       | Raising one child provides experience but no assurance of success with the next      |
+| No particular expertise is required. But cooking expertise increases success rate     | High levels of expertise in a variety of fields are necessary for success       | Expertise can contribute but is neither necessary nor sufficient to assure success      |
+| Recipes produce standardized products     | Rockets are similar in critical ways       | Every child is unique and must be understood as an individual     |
+| The best recipes give good results every time     | There is a high degree of certainty of outcome       | Uncertainty of outcome remains     |
+| Optimistic approach to problem possible     | Optimistic approach to problem possible       | Optimistic approach to problem possible     |
 
 ## How
 
 - Common Lisp: Read chapters 24 and 25 in [Practical Common Lisp](https://gigamonkeys.com/book/) by Peter Seibel
 - YAML fans enjoy [Kaitai](https://kaitai.io/)
 - I like [GNU poke](https://www.jemarch.net/poke)
+- If you just want an independent implementation, consider [PureHDF](https://apollo3zehn.github.io/PureHDF/)
 
 So far, nothing new here. (I talked about this a few years ago, but I won't have the time to "sweat the details.")
 
