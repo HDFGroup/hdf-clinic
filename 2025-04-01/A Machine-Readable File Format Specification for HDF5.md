@@ -29,3 +29,17 @@ Validation & Debugging:** It is Easier to verify whether a file conforms to the 
 So far, nothing new here. (I talked about this a few years ago, but I won't have the time to "sweat the details.")
 
 How about asking [ChatGPT](https://chatgpt.com/) for a helping hand? Worst case: Come back another time...
+
+## Dramatis Personae
+
+- [HDF5 File Format Specification Version 2.0](https://support.hdfgroup.org/documentation/hdf5/latest/_f_m_t2.html)
+- [GNU poke 4.3](https://www.jemarch.net/poke-4.3-manual/poke.html)
+- [ChatGPT GPT-4o](https://openai.com/index/gpt-4o-system-card/)
+
+## Sample Problems
+
+### Problem 1: Parsing the Superblock
+
+### Problem 2: Parsing Datatype Messages
+
+### Problem 3: ???
