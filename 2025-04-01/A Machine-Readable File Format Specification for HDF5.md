@@ -79,9 +79,18 @@ With these caveats, here is a [link](https://chatgpt.com/share/67ebf358-eb30-800
 - The code snippets are riddled with errors
 - The logic/structure is sound, but have the `poke` manual handy if you want to try the suggestions
 - I have not tried this, but a Custom GPT might help this (I'll report back next time)
-- Maybe a more code-centric model (`o3-mini-high`) would yield better results
-
+- Maybe a more code-centric model (`o3-mini-high`) would yield better results?
+- I have not tried Kaitai, which might yield better results
 
 ## Next Steps
 
-Let's build a few useful tools together! Interested? Email [me](mailto:gheber@hdfgroup.org)! 
+Let's build a few useful tools together! Interested? Email [me](mailto:gheber@hdfgroup.org)!
+
+### Use Cases
+
+| Read-Only  | Read/Write |
+| ------------- | ------------- |
+| A better`h5debug` (`h5poke`?)  | Simple repair jobs  |
+| File consitency checker  | (Once we've mastered simple) Complicated repair jobs  |
+| Reporting/visualization app. | Data transformer |
+| Data extractor| ??? |
