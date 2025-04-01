@@ -90,7 +90,7 @@ Let's build a few useful tools together! Interested? Email [me](mailto:gheber@hd
 
 | Read-Only  | Read/Write |
 | ------------- | ------------- |
-| A better`h5debug` (`h5poke`?)  | Simple repair jobs  |
+| A better`h5debug` (`h5poke`?)  | Simple repair jobs  (e.g., `h5clear`, superblock fixes) |
 | File consitency checker  | (Once we've mastered simple) Complicated repair jobs  |
 | Reporting/visualization app. | Data transformer |
 | Data extractor| ??? |
