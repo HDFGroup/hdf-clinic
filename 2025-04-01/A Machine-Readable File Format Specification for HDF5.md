@@ -32,17 +32,36 @@ How about asking [ChatGPT](https://chatgpt.com/) for a helping hand? Worst case:
 
 ## Dramatis Personae
 
-- [HDF5 File Format Specification Version 2.0](https://support.hdfgroup.org/documentation/hdf5/latest/_f_m_t2.html)
-- [GNU poke 4.3](https://www.jemarch.net/poke-4.3-manual/poke.html)
-- [ChatGPT GPT-4o](https://openai.com/index/gpt-4o-system-card/)
+- [HDF5 File Format Specification Version 2.0](https://support.hdfgroup.org/documentation/hdf5/latest/_f_m_t2.html) (no introduction needed)
+- [GNU poke 4.3](https://www.jemarch.net/poke-4.3-manual/poke.html) (I recommend you watch José Marchesi's [Introduction to GNU poke](https://www.youtube.com/watch?v=KZ8meNZ_IhY).)
+- [ChatGPT GPT-4o](https://openai.com/index/gpt-4o-system-card/) (no introduction needed)
 
-## Sample Problems
+## A Recent Conversation With ChatGPT
 
-### Problem 1: Parsing the Superblock
+Doing live demos with ChatGPT is hard for several reasons:
+- LLMs are inherently probabilistic. Even with the same prompt, they might give slightly different answers each time. In a live demo, this can backfire if you're expecting a specific outcome or format.
+- ChatGPT performs best when it has the right context. In a live demo, if the setup doesn’t fully establish what the model “knows” or if earlier context is missing or ambiguous, the results can be off.
+- What seems clear to a person might not be clear to the model. If your prompt is slightly off or vague, it may interpret it in an unintended way—and there's no room for trial and error in a live setting.
+- While not always the model’s fault, any delay in response due to internet hiccups or API timeouts can kill the flow of a demo.
+- If the demo relies on plugins, APIs, or tool use (like file uploads, code execution, or web browsing), anything breaking in that chain can derail the demo—especially since these components don’t always behave identically between sessions.
+- Demo stress is real. You might mistype something, forget a step, or rush. Unlike pre-recorded content, there’s no second take.
+- If the demo was built and tested on a specific model version (e.g., GPT-4-turbo), and that version changes or is updated just before the demo, behavior might subtly shift.
 
-### Problem 2: Parsing Datatype Messages
+*I will do better next time by doing the following:*
+- Use an intro prompt: always start with a clear system or setup prompt (even hidden if you're using the API or an app).
+- Use pre-filled prompts or buttons instead of typing them live.
+- Start with a simple prompt or two to load context and prime the model's behavior.
+- Use `temperature = 0` for consistency
+- Build the demo with Custom GPTs or Pre-loaded Context (ChatGPT Pro)
 
-### Problem 3: ???
+With these caveats, here is a [link](https://chatgpt.com/share/67ebf358-eb30-8000-a626-4e0bda18535e) to a recent conversation.
+
+### Observations
+
+- The code snippets are riddled with errors
+- The logic/structure is sound, but have the `poke` manual handy if you want to try the suggestions
+- I have not tried this, but a Custom GPT might help this (I'll report back next time)
+
 
 ## Next Steps
 
