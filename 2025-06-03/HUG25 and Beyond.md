@@ -1,7 +1,5 @@
 # HUG25 and Beyond
 
-
-
 The 2025 HDF User Group meeting (HUG) just (May 26-28) took place at DESY in Hamburg, Germany.
 Thanks to our hosts, sponsors, the Organizing Committee, and to Lori Cooper (HDFG).
 
@@ -10,10 +8,21 @@ The first 13 videos are ready on [YouTube](https://www.youtube.com/watch?v=dyQx-
 ## Day 1 Selection
 
 - [The keys to the management of time-evolution signals on HDF5 files in ITER](https://www.youtube.com/watch?v=emCQM_CtBgQ&list=PLPyhR4PdEeGa5xkurCDaLZ5S4ppN_Z86w&index=3)
+  - Probably the heaviest SWMR users on the planet...
 - [High Performance Storage for HPC: Proven HDF5 Scalability and Consistency on Pure Storage FlashBlade](https://www.youtube.com/watch?v=YaSZ4hA1mvE&list=PLPyhR4PdEeGa5xkurCDaLZ5S4ppN_Z86w&index=5)
+  - Yes, you can SWMR with NFS!
+  - Do you really need a parallel file system?
 - [Open HDF5-Based Format for Industrial Inspection Data w/Exp Integration of the Onion VFD](https://www.youtube.com/watch?v=Z3qUenGC-OQ&list=PLPyhR4PdEeGa5xkurCDaLZ5S4ppN_Z86w&index=8)
+  - We talked about [Versioned HDF5](https://github.com/HDFGroup/hdf-clinic/tree/main/2024-10-29)
+  - HDF5 file versioning is a true "diamond in the rough"
+  - Let's finish the job!
 - [Using a HDF5 File as a Zarr v3 Shard](https://www.youtube.com/watch?v=c4b_yfIeHJc&list=PLPyhR4PdEeGa5xkurCDaLZ5S4ppN_Z86w&index=9)
+  - Mark's got an excellent point, and we try to be helpful
+  - But *"For Heaven's sake, do not confound HDF5 with anything else!"*
+—Friedrich Nietzsche, Ecce Homo
 - [Down to the bytes: can we simplify alternative access to HDF5?](https://www.youtube.com/watch?v=EgtAiYslNGg&list=PLPyhR4PdEeGa5xkurCDaLZ5S4ppN_Z86w&index=13)
+  - [A Machine-Readable File Format Specification for HDF5](https://github.com/HDFGroup/hdf-clinic/blob/main/2025-04-01/A%20Machine-Readable%20File%20Format%20Specification%20for%20HDF5.md)
+  - Gaining momentum!
 
 ## HDFView
 
