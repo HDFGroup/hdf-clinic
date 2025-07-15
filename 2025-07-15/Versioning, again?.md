@@ -26,13 +26,43 @@ The concept of *compatibility* "entangles" versioning of the library and the fil
 
 ## The version of the HDF5 library is what it says on the tin
 
-### API compatibility
+At compile time, the header file `H5public.h` defines several C preprocessor macros that expose the library version:
+- `H5_VERS_MAJOR`: The major version number.
+- `H5_VERS_MINOR`: The minor version number.
+- `H5_VERS_RELEASE`: The release number.
+- `H5_VERS_INFO`: A string containing the full version information
 
-### ABI compatibility
+### API (Application Programming Interface) compatibility
+
+- Source-level compatibility, i.e., if an API is compatible, code written against an older version of the library can be recompiled with a newer version without source code changes.
+- See API compatibility macros
+
+### ABI (Application Binary Interface) compatibility
+
+- Binary-level compatibility, i.e., if an ABI is compatible, an application compiled against an older version of the library can be run with a newer version of the shared library without being recompiled.
+- `MINOR` updates are **not** ABI compatible
 
 ## The version of the HDF5 file format is more complicated...
 
 ### HDF5 file format specification versions
+
+## Recommendations
+
+Use common sense.
+
+### Software Developers
+1. The choice of HDF5 library version should be a deliberate architectural decision, not an afterthought.
+2. Make an explicit compatibility choice.
+3. Enforce compatibility programmatically: use the `H5Pset_libver_bounds`
+4. Migrate incrementally: use the API compatibility macros first
+
+### Data Curators and Archivists
+1. Mandate a metadata provenance policy
+2. Standardize on a long-term support (LTS) format
+
+### System Administrators and HPC Center Staff
+1. Provide multiple HDF5 versions
+2. Use environment modules or containers
 
 ## Questions
 
