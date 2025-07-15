@@ -10,6 +10,7 @@ In software, versioning helps us to manage the *conflict* between innovation and
 an access library. (Jeffery R. Kuehn)
 
 There is no direct correlation or causation between innovation in the library and the file format. That's why, speaking generally, we version them separately.
+Also, applications might access HDF5 files directly without the HDF5 library.
 
 **Note:** Often, versions are (sequences of) numbers. However, other unique identifiers are available to identify versions.
 
