@@ -18,6 +18,8 @@ The concept of *compatibility* "entangles" versioning of the library and the fil
 
 [Figure]
 
+![Figure](./HDF5_versions.png)
+
 **Backward compatibility:** The latest HDF5 library version can read HDF5 files created with any earlier library version.
 
 **Forward compatibility:** An earlier version of the HDF library can read HDF5 files created by a later HDF5 library version if the file does not contain on-disk features that were introduced after the earlier version.
