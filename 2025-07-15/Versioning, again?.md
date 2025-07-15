@@ -71,7 +71,7 @@ Use common sense.
 ### Software Developers
 1. The choice of HDF5 library version should be a deliberate architectural decision, not an afterthought.
 2. Make an explicit compatibility choice.
-3. Enforce compatibility programmatically: use the `H5Pset_libver_bounds`
+3. Enforce compatibility programmatically: use the [`H5Pset_libver_bounds`](https://support.hdfgroup.org/documentation/hdf5/latest/group___f_a_p_l.html#gacbe1724e7f70cd17ed687417a1d2a910)
 4. Migrate incrementally: use the API compatibility macros first
 
 ### Data Curators and Archivists
