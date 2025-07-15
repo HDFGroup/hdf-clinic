@@ -16,8 +16,6 @@ Also, applications might access HDF5 files directly without the HDF5 library.
 
 The concept of *compatibility* "entangles" versioning of the library and the file format. 
 
-[Figure]
-
 ![Figure](./HDF5_versions.png)
 
 **Backward compatibility:** The latest HDF5 library version can read HDF5 files created with any earlier library version.
@@ -48,6 +46,24 @@ At compile time, the header file `H5public.h` defines several C preprocessor mac
 
 ### HDF5 file format specification versions
 
+See [here](https://support.hdfgroup.org/documentation/hdf5/latest/_s_p_e_c.html).
+
+In [version 3.0](https://support.hdfgroup.org/documentation/hdf5/latest/_f_m_t3.html) of the specification, the term 'version' occurs 566 time. The count was 66 in [version 1.0](https://support.hdfgroup.org/documentation/hdf5/latest/_f_m_t1.html).
+
+### The Mighty Superblock
+
+- Has a version version, currently `[0, 1, 2, 3]`
+- Sets "expectations" for the file
+- When using the HDF5 library, the superblock version is set implicitly, based on feature use, at file creation time
+- The library adheres to a principle of using the lowest possible superblock version that can support the requested features
+
+**Note:** The superblock version is not and cannot be used as a "HDF5 file version."
+
+An HDF5 file is not a static artifact; it can be a "living" container.
+Different objects within a single file may have been created or modified at different times by applications using different versions of the HDF5 library.
+A single, file-level version number would therefore be ambiguous and potentially misleading. For instance, a file might be created with HDF5 1.8,
+and then later, a new dataset using a 1.12 feature could be appended to it. A single version stamp for the file would fail to capture this intricacy.
+
 ## Recommendations
 
 Use common sense.
@@ -68,6 +84,19 @@ Use common sense.
 
 ## Questions
 
-1. I'm a developer of an independent HDF5 implementation, and compatibility is not a concern for me. What is the "best" HDF5 file format version? (I'm unsure.)
-2. What, if anything, changes in HDF5 2.0.0 concerning versioning? (Ask Scot!)
-3. Is there light at the end of the tunnel? ([Yes!](https://www.youtube.com/watch?v=EgtAiYslNGg))
+### 1. I'm a developer of an independent HDF5 implementation, and compatibility is not a concern for me. What is the "best" HDF5 file format version?
+
+I'm unsure.
+
+### 2. What, if anything, changes in HDF5 2.0.0 concerning versioning?
+
+Ask Scot!
+
+HDF5 2.0.0, which will introduce native complex number support and, crucially, will formally adopt Semantic Versioning.
+This move to SemVer is an attempt to pay down the "complexity debt" incurred over the years.
+By making versioning more predictable, The HDF Group aims to improve the
+Compatibility story from a developer and tooling perspective, making the entire ecosystem easier to navigate.
+
+### 3. Is there light at the end of the tunnel?
+
+([Yes!](https://www.youtube.com/watch?v=EgtAiYslNGg))
