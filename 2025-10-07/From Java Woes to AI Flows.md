@@ -43,7 +43,7 @@ Allen used [Claude Code](https://www.claude.com/product/claude-code) while worki
 
 You can tell VSCode about the instructions in this file by adding it to the **Chat: Instructions File Locations** setting. That way it will be available, for example, in Copilot chat.
 
-![Figure](./copilit-chat.png)
+![Figure](./copilot-chat.png)
 
 If you are a Java developer, the HDF5 library, instead of being a thorn in your side, will soon behave like any other dependence you can download from your favorite Maven repository.
 
