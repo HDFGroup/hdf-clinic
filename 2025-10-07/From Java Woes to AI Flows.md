@@ -50,3 +50,11 @@ If you are a Java developer, the HDF5 library, instead of being a thorn in your 
 Which brings us to the next topic: *Why should you trust our or anyone else's artifacts?*
 
 ## NSF Safe-OSE
+
+The National Science Foundation's [Safety, Security, and Privacy of Open-Source Ecosystems program (Safe-OSE)](https://www.nsf.gov/funding/opportunities/safe-ose-safety-security-privacy-open-source-ecosystems) "supports efforts to address safety, security and privacy vulnerabilities in open-source ecosystems to enhance their resilience and ability to manage current and future risks." We are pleased to announce that our proposal [Strengthening HDF5 for Science, Industry, and National Security Applications](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2534078&HistoricalAwards=false) was selected for funding together with [seven other fantastic OSEs](https://www.nsf.gov/awardsearch/advancedSearchResult?ProgEleCode=324Y00&BooleanElement=Any&BooleanRef=Any&ActiveAwards=true#results). Congratulations to our fellow-awardees, and stay tuned for a more detailed announcement. Contact [me](mailto:gheber@hdfgroup.org) if you are interested in HDF5 SSP issues and would be interested in joining a working group on these issues.
+
+
+
+
+
+
