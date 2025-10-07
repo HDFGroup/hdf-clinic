@@ -4,8 +4,8 @@
 
 About four months ago, I was lamenting the state of HDFView and the poor Java developer experience with the HDF5 library. With the help of AI, my colleague Allen Byrne has made significant strides, including:
 
-- [Maven](https://maven.apache.org/index.html) integration for the HDF5 library Java bindings (JNI-based)
-- Maven integration for the HDF5 library Java bindings (Foreign Function and Memory - FFM-based)
+- [Maven](https://maven.apache.org/index.html) integration for the HDF5 library Java bindings ([Java Native Interface](https://docs.oracle.com/javase/8/docs/technotes/guides/jni/) - JNI-based)
+- Maven integration for the HDF5 library Java bindings ([Foreign Function and Memory](https://docs.oracle.com/en/java/javase/21/core/foreign-function-and-memory-api.html) - FFM-based)
 - HDFView builds against Maven packages
 
 I will give a brief update on Allen’s achievements. How much of this will show up in HDF5 2.0.0 remains to be seen, but the direction of travel is clear: HDF5 2.0 will be open for AI-assisted development, documentation, and tools.
