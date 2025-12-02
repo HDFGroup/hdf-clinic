@@ -12,3 +12,11 @@
 8. [CVE-2025-9905](https://www.cve.org/CVERecord?id=CVE-2025-9905)
 9. [User-Defined Functions for HDF5](https://arxiv.org/abs/2109.11709)
 10. [HDF Forum - HDF5 Safety, Security, and Privacy category](https://forum.hdfgroup.org/c/ssp/25)
+
+## Read My MindMap
+
+![Figure](./NSF%20Safe-OSE%20HDF5.png)
+
+## Disclaimer
+
+> This material is based upon work supported by the National Science Foundation under Federal Award No. 2534078. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
