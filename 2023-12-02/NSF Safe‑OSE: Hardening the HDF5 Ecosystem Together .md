@@ -10,3 +10,4 @@
 6. [HDF5-releated CVE records](https://www.cve.org/CVERecord/SearchResults?query=hdf5)
 7. [CVE-2025-9905](https://www.cve.org/CVERecord?id=CVE-2025-9905)
 8. [User-Defined Functions for HDF5](https://arxiv.org/abs/2109.11709)
+9. [HDF Forum - HDF5 Safety, Security, and Privacy category](https://forum.hdfgroup.org/c/ssp/25)
