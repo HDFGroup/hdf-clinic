@@ -244,10 +244,7 @@ def write_hdf5(
         gchunks.create_dataset(
             "text",
             data=np.array(all_chunks, dtype=object),
-            dtype=vlen_str,
-            chunks=True,
-            compression="gzip",
-            compression_opts=4,
+            dtype=vlen_str
         )
         gchunks.create_dataset(
             "work_id",
