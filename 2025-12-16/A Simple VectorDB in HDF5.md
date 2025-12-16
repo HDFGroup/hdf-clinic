@@ -31,7 +31,7 @@ Optionally: "...within Macbeth" (metadata filter)
 
 ## Embeddings + cosine similarity
 
-*"to be or not to be"* → 384-D embedding vector (`all-MiniLM-L6-v2`)
+*"to be or not to be"* → 384-D embedding vector ([`all-MiniLM-L6-v2`](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2))
 
 **Similarity (cosine):**
 ```
