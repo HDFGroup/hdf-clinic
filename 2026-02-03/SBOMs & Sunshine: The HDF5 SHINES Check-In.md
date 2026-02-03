@@ -49,6 +49,11 @@ The investigation is ongoing, but exposed already several weaknesses in our publ
 
 ## HDF5 Safety, Security, & Privacy (SSP) Special Interest Group (SIG)
 
+- 🚀 The SIG will launch in February (2026)!
+- We'll have a soft-launch next week with a few mailing lists (open discussion, low-traffic announcements, SIG-internal, workshops)
+- Email [me](mailto:gheber@hdfgroup.org) to get your name on the list!
+- This [GitHub repo](https://github.com/HDFGroup/hdf5-ssp-sig) is where we keep artifacts (models, policies, tools, audit artifacts, etc.)
+
 ## HDF5 Product Security Incident Response Team (PSIRT)
 
 ## Getting involved
