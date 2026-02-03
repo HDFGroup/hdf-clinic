@@ -1,5 +1,7 @@
 # SBOMs & Sunshine: The HDF5 SHINES Check-In
 
+HDF5 SHINES = **S**ecuring **H**DF5 for **I**ndustry, **N**ational Security, **E**ngineering, and **S**cience
+
 ## Software Bill of Materials (SBOM)
 
 ![Ingredients](./OIP.jpeg)
