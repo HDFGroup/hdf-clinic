@@ -56,7 +56,21 @@ The investigation is ongoing, but exposed already several weaknesses in our publ
 
 ## HDF5 Product Security Incident Response Team (PSIRT)
 
+We have a PSIRT headed by my colleague Glenn Song, including Jordan Henderson and Scot Breitenfeld.
+
+You can now report *security* issues via a dedicated email address [`security@hdfgroup.org`](mailto:security@hdfgroup.org) or via [GitHub](https://github.com/HDFGroup/hdf5/issues) => New issue => Report a security vulnerability.
+
+The PSIRT is part of the SIG, and has its specific artifacts in the HDF5 SSP SIG GitHub repo, for example, [Vulnerability Management & Disclosure (PSIRT) Policy](https://github.com/HDFGroup/hdf5-ssp-sig/blob/main/policy/Vulnerability%20Management%20%26%20Disclosure%20(PSIRT)%20Policy.md), or [HDF5 Security Advisory: CVE-YYYY-XXXX](https://github.com/HDFGroup/hdf5-ssp-sig/blob/main/templates/HDF5%20Security%20Advisory.md). The Team will triage all CVEs and security vulnerability reports, and publish original CVEs and security advisories in a designated place (to be announced).
+
+Email [me](mailto:gheber@hdfgroup.org) if you have PSIRT experience, and would like to join the team!
+
 ## Getting involved
+
+1. Our [HDF5 SSP survey](https://forms.gle/2P8NZUBYmD4fm5JJ9) is still open, and we are eager to hear from you.
+2. Join the HDF5 SSP SIG or get your name (email) on the mailing list!
+3. Join the HDF5 PSIRT team!
+4. Love audits? (I do!) Get in touch via [email](mailto:gheber@hdfgroup.org)!
+5. Report any [safety, security, or privacy](https://www.hdfgroup.org/2026/01/26/safety-security-and-privacy-in-hdf5-a-shared-vocabulary/) issues on GitHub or via email
 
 ## Acknowledgement
 
