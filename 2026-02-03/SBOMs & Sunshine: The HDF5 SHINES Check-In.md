@@ -1,6 +1,6 @@
 # SBOMs & Sunshine: The HDF5 SHINES Check-In
 
-## Software Bill of Material (SBOM)
+## Software Bill of Materials (SBOM)
 
 ![Ingredients](./OIP.jpeg)
 ![Bob](./bob.jpg)
@@ -27,3 +27,15 @@
   - `post-build` => binaries
 - During `build`: core, addons (filters, VFD), tools, HL interfaces
 - During `post-build`: plugins, bundles 
+
+## First audit
+
+## HDF5 Safety, Security, & Privacy (SSP) Special Interest Group (SIG)
+
+## HDF5 Product Security Incident Response Team (PSIRT)
+
+## Getting involved
+
+## Acknowledgement
+
+> This material is based upon work supported by the U.S. National Science Foundation under Federal Award No. 2534078. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
