@@ -28,9 +28,24 @@ HDF5 SHINES = **S**ecuring **H**DF5 for **I**ndustry, **N**ational Security, **E
   - `build` => Build options (CMake configuration)
   - `post-build` => binaries
 - During `build`: core, addons (filters, VFD), tools, HL interfaces
-- During `post-build`: plugins, bundles 
+- During `post-build`: plugins, bundles
+- Got ideas? => contact [me](mailto:gheber@hdfgroup.org)
 
 ## First audit
+
+**Q:** How many `hdf5-2.0.0.tar.gz` tarballs with non-matching SHA256 checksums are in circulation?
+
+**A:** We don't know. I'm aware of at least three.
+
+👉 Follow the story on [GitHub](https://github.com/HDFGroup/hdf5-ssp-sig/tree/main/audit/proofs/hdf5-core/2.0.0/psirt/release-integrity/PRISUPP-2204)
+
+This audit got triggered by a support ticket from a user who reported a SHA256 hash mismatch between the the tarballs on our [support site](https://support.hdfgroup.org/releases/hdf5/v2_0/v2_0_0/downloads/index.html) and on [GitHub](https://github.com/HDFGroup/hdf5/releases/tag/2.0.0).
+
+In the reported instance, the packaging variance was benign, i.e., the contents were byte-identical. The artifacts were replaced.
+
+However, in searching for other variants I found a version of `hdf5-2.0.0.tar.gz` that is materially [different](https://github.com/HDFGroup/hdf5-ssp-sig/blob/main/audit/proofs/hdf5-core/2.0.0/psirt/release-integrity/PRISUPP-2204/artifacts/diffs/fossies-github.filehash.diff) (files missing and file differences). Premature publication/release retagging combined with aggressive download bots is most likely to blame, in this case.
+
+The investigation is ongoing, but exposed already several weaknesses in our publishing and CI/CD artifact handling process.
 
 ## HDF5 Safety, Security, & Privacy (SSP) Special Interest Group (SIG)
 
