@@ -23,12 +23,16 @@ HDF5 SHINES = **S**ecuring **H**DF5 for **I**ndustry, **N**ational Security, **E
   - Ideally CMake would take care of this, but ...   
 - Currently looking at [CycloneDX](https://cyclonedx.org/)
 - Check [work in progress](https://github.com/HDFGroup/hdf5-ssp-sig/tree/main/templates/sbom)
-- Build phases
-  - `pre-build` => HDF5 source tarball
-  - `build` => Build options (CMake configuration)
-  - `post-build` => binaries
-- During `build`: core, addons (filters, VFD), tools, HL interfaces
-- During `post-build`: plugins, bundles
+- Current thinking:
+  - [Lifecycle phases](https://cyclonedx.org/docs/1.6/json/#metadata_lifecycles_items_oneOf_i0_phase)
+    - `pre-build` => HDF5 source tarball
+      - BOM consisting of information obtained prior to a build process and may contain source files and development artifacts and manifests. The inventory may need to be resolved and retrieved prior to use. 
+    - `build` => Build options (CMake configuration)
+      - BOM consisting of information obtained during a build process where component inventory is available for use. The precise versions of resolved components are usually available at this time as well as the provenance of where the components were retrieved from.
+    - `post-build` => binaries
+      - BOM consisting of information obtained after a build process has completed and the resulting components(s) are available for further analysis. Built components may exist as the result of a CI/CD process, may have been installed or deployed to a system or device, and may need to be retrieved or extracted from the system or device.
+  - During `build`: core, addons (filters, VFD), tools, HL interfaces
+  - During `post-build`: plugins, bundles
 - Got ideas? => contact [me](mailto:gheber@hdfgroup.org)
 
 ## First audit
@@ -56,7 +60,7 @@ The investigation is ongoing, but exposed already several weaknesses in our publ
 
 ## HDF5 Product Security Incident Response Team (PSIRT)
 
-We have a PSIRT headed by my colleague Glenn Song, including Jordan Henderson and Scot Breitenfeld.
+We have a PSIRT headed by my colleague [Glenn Song](https://www.hdfgroup.org/team/glenn-song/), co-starring [Jordan Henderson](https://www.hdfgroup.org/team/jordan-henderson/) and [Scot Breitenfeld](https://www.hdfgroup.org/team/m-scot-breitenfeld/).
 
 You can now report *security* issues via a dedicated email address [`security@hdfgroup.org`](mailto:security@hdfgroup.org) or via [GitHub](https://github.com/HDFGroup/hdf5/issues) => New issue => Report a security vulnerability.
 
@@ -68,7 +72,7 @@ Email [me](mailto:gheber@hdfgroup.org) if you have PSIRT experience, and would l
 
 1. Our [HDF5 SSP survey](https://forms.gle/2P8NZUBYmD4fm5JJ9) is still open, and we are eager to hear from you.
 2. Join the HDF5 SSP SIG or get your name (email) on the mailing list!
-3. Join the HDF5 PSIRT team!
+3. Join the HDF5 PSIRT!
 4. Love audits? (I do!) Get in touch via [email](mailto:gheber@hdfgroup.org)!
 5. Report any [safety, security, or privacy](https://www.hdfgroup.org/2026/01/26/safety-security-and-privacy-in-hdf5-a-shared-vocabulary/) issues on GitHub or via email
 
