@@ -3,3 +3,11 @@
 ## Software Bill of Material (SBOM)
 
 ![Ingredients](./OIP.jpeg)
+
+### References
+
+- [Framing Software Component Transparency: Establishing a Common Software Bill of Materials (SBOM)](https://www.cisa.gov/sites/default/files/2024-10/SBOM%20Framing%20Software%20Component%20Transparency%202024.pdf)
+- [How to create SBOMs in Java with Maven and Gradle](https://snyk.io/blog/create-sboms-java-maven-gradle/)
+- [Automating creation of Software Bills of Materials](https://archive.fosdem.org/2021/schedule/event/automating_creation_of_spdx_sbom/)
+- [Complete Guide to C/C++ SBOM Generation](https://sbomgenerator.com/guides/cpp)
+- [Spack SBOM example](https://github.com/spack/spack-sbom/blob/1b16b6ed9f2c71fd9ff71951433b73d39f4650a5/examples/zlib.json)
