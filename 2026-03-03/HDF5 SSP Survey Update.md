@@ -11,7 +11,7 @@ In today's clinic, I want to share a few observations.
 
 ## ☝️ Don't forget
 
-- HDF5 library 2.1.0 is just around the corner
+- [HDF5 library 2.1.0](https://github.com/HDFGroup/hdf5/releases) is just around the corner
 - The [HDF5 SSP SIG](https://github.com/HDFGroup/hdf5-ssp-sig/wiki/HDF5-SSP-SIG) is meeting this Thursday at 11:00 AM Central Time. Join us!
   - [Zoom link](https://us06web.zoom.us/j/82445234681)
   - [Agenda](https://github.com/HDFGroup/hdf5-ssp-sig/wiki/2026)
