@@ -34,6 +34,15 @@ In today's clinic, I want to share a few observations.
 
 ## Who responded - roles, org. types, and geography (self‑reported)
 
+### Roles (multi-select)
+
+- Product/vendor: 5
+- HPC I/O specialist: 5
+- Security engineer/analyst: 5
+- Data engineer: 8
+- Researcher/PI: 11
+- Software developer: 19
+
 ### Organization type
 
 - Private company: 12 (36%) 
@@ -42,6 +51,15 @@ In today's clinic, I want to share a few observations.
 - Non-profit: 3 (9%) 
 - Independent consultant: 1 (3%)
 - Startup: 1 (3%) 
+
+### Region
+
+- North America: 12
+- Europe: 11
+- Asia-Pacific: 4
+- Africa: 2
+- Middle East: 1
+- Other: 1
 
 ### Where HDF5 is used (multi-select) 
 
