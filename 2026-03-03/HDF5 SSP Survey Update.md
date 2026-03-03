@@ -9,14 +9,14 @@ In today's clinic, I want to share a few observations.
 
 ## Summary
 
-**Respondents:** 33 total survey responses. Most questions had 26-31 answers (some optional fields). 
+So far we received 33 survey responses. Most questions had 26-31 answers (some optional fields). 
 
-- Highest-priority threat areas: supply chain for libraries/bindings (14/31 = 45% rated Major/Critical) and malformed/poisoned files (12/31 = 39% Major/Critical). 
-- Third-party plugins are common: 17/33 (52%) load third-party plugins at least occasionally; 7/33 (21%) report VOL/VFD/transforms usage (vs compression filters alone). 
-- Offline constraints matter: 18/28 (64%) require solutions that work in offline/air-gapped environments. 
-- Integrity/resilience gap: 10/33 (30%) experienced corruption/unreadability after crash/power loss in the last 12 months; average confidence that corruption would be detected is 2.86/5 (n=28). 
-- Strong appetite for built-in integrity verification: 17/31 (55%) would adopt immediately; most others are conditional on overhead. 
-- Performance budget is modest: 26/33 (79%) would accept up to 10% overhead for security features. 
+- **Highest-priority threat areas:** supply chain for libraries/bindings (14/31 = 45% rated Major/Critical) and malformed/poisoned files (12/31 = 39% Major/Critical). 
+- **Third-party plugins are common:** 17/33 (52%) load third-party plugins at least occasionally; 7/33 (21%) report VOL/VFD/transforms usage (vs compression filters alone). 
+- **Offline constraints matter:** 18/28 (64%) require solutions that work in offline/air-gapped environments. 
+- **Integrity/resilience gap:** 10/33 (30%) experienced corruption/unreadability after crash/power loss in the last 12 months; average confidence that corruption would be detected is 2.86/5 (n=28). 
+- **Strong appetite for built-in integrity verification:** 17/31 (55%) would adopt immediately; most others are conditional on overhead. 
+- **Performance budget is modest:** 26/33 (79%) would accept up to 10% overhead for security features. 
 
 ## Key takeaways
 
