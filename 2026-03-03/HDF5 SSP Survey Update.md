@@ -76,6 +76,17 @@ In today's clinic, I want to share a few observations.
 
 ![Environment constraints](./Signature%20verification%20environment%20constraints.png)
 
+## Integrity & resilience (corruption detection and recovery) 
+
+![Integrity & resilience](./Crash-power%20loss%20related%20HDF5%20corruption%20in%20past%2012%20months.png)
+
+![Corruption detection confidence](./Confidence%20corruption%20would%20be%20detected.png)
+
+## Adoption and performance tradeoffs
+
+![Integrity verification adoption willingness](./Willingness%20to%20adopt%20built-in%20integrity%20verification.png)
+
+![Acceptable overhead](./Acceptable%20performance%20overhead%20for%20security%20features.png)
 
 
 
