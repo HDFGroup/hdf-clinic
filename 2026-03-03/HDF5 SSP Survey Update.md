@@ -60,6 +60,21 @@ In today's clinic, I want to share a few observations.
 - Often: 4 (12%) 
 - Always: 1 (3%) 
 
+## Threat prioritization
+
+![Threat concerns](./Threat%20concerns%20rated%20major-critical.png)
+
+## Top concerns for the next 12 months
+
+![Top concerns](./Top%20concerns%20for%20next%2012%20months.png)
+
+## Plugin use
+
+![Plugin use](./Third-party%20plugin%20loading%20frequency.png)
+
+## Environment constraints (offline, policy, and deployment)
+
+![Environment constraints](./Signature%20verification%20environment%20constraints.png)
 
 
 
