@@ -15,6 +15,8 @@ In today's clinic, I want to share a few observations.
 - The [HDF5 SSP SIG](https://github.com/HDFGroup/hdf5-ssp-sig/wiki/HDF5-SSP-SIG) is meeting this Thursday at 11:00 AM Central Time. Join us!
   - [Zoom link](https://us06web.zoom.us/j/82445234681)
   - [Agenda](https://github.com/HDFGroup/hdf5-ssp-sig/wiki/2026)
+- Subscribe to the HDF5 SSP SIG announcement mailing list: [hdf5-ssp-announce+subscribe@groups.io](mailto:hdf5-ssp-announce+subscribe@groups.io)
+- Subscribe to the HDF5 SSP SIG discussion mailing list: [hdf5-ssp-discuss+subscribe@groups.io](mailto:hdf5-ssp-discuss+subscribe@groups.io)
 
 ## 🧾 Summary
 
