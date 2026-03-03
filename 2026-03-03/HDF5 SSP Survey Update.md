@@ -117,11 +117,13 @@ Built-in integrity verification appears to have strong pull, but performance ove
 
 ## Preliminary implications for HDF5 SSP SIG priorities 
 
-- Prioritize: (a) supply-chain guidance and tooling (SBOMs, advisories, packaging patterns), and (b) hardening against malformed files (fuzzing, conformance corpora, safe parsing defaults). 
-- Design signing/verification for offline-first deployments (air-gapped HPC), with optional online transparency logs where available. 
-- Define a “safe mode” profile for untrusted inputs: object/attribute caps, link-depth limits, chunk limits, bounded metadata cache, and open-time timeouts. 
+- Prioritize:
+  - (a) supply-chain guidance and tooling (SBOMs, advisories, packaging patterns), and
+  - (b) hardening against malformed files (fuzzing, conformance corpora, safe parsing defaults). 
+- Design signing/verification for offline-first deployments (e.g., air-gapped HPC), with optional online transparency logs where available. 
+- Define a *“safe mode” profile* for untrusted inputs: object/attribute caps, link-depth limits, chunk limits, bounded metadata cache, and open-time timeouts. 
 - Pair technical mitigations with operational assets: best-practice deployment guides, disclosure/patch cadence guidance, and compliance tests (e.g., signed-plugin checks). 
-- Treat integrity detection as a product feature: make it easy to turn on, easy to measure overhead, and easy to integrate into CI/CD pipelines. 
+- Treat integrity assurance/checks as a product feature: make it easy to turn on, easy to measure overhead, and easy to integrate into CI/CD pipelines. 
 
 ## Acknowledgement
 
