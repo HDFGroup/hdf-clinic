@@ -70,25 +70,47 @@ In today's clinic, I want to share a few observations.
 
 ## Plugin use
 
+Third-party plugins are a real part of the ecosystem, which means trust controls need to be usable for everyday workflows - not only for “high assurance” environments. 
+
 ![Plugin use](./Third-party%20plugin%20loading%20frequency.png)
+
+Preferred governance mode for plugin loading (n=32 responses): 
+
+- Warn on unsigned/invalid signatures, allow override: 11 (34%) 
+- Not applicable: 9 (28%) 
+- Strict: only load plugins with valid signatures: 8 (25%) 
+- Disable signature checks (current behavior): 4 (12%) 
+
+Preferred signing approach was mixed, with many respondents indicating “no preference” as long as HDF5 abstracts the mechanism; among those with a preference, OpenSSL/X.509 was most common (n=24 responses).
 
 ## Environment constraints (offline, policy, and deployment)
 
+Any verification/signing approach has to work in constrained environments. The most common requirement was offline/air-gapped support, followed by limited outbound HTTP and centralized publisher allow-listing. 
+
 ![Environment constraints](./Signature%20verification%20environment%20constraints.png)
 
-## Integrity & resilience (corruption detection and recovery) 
+## Integrity & resilience (corruption detection and recovery)
+
+Crash/power-loss corruption is not hypothetical: about 30% reported incidents in the last 12 months, and confidence in detecting corruption is moderate (mean 2.86/5). 
 
 ![Integrity & resilience](./Crash-power%20loss%20related%20HDF5%20corruption%20in%20past%2012%20months.png)
 
 ![Corruption detection confidence](./Confidence%20corruption%20would%20be%20detected.png)
 
+Current integrity practices (multi-select, n=22 responses): 
+
+- File‑system snapshots/backups: 13 
+- External file hash (e.g., SHA‑256): 9 
+- Per‑chunk checksum/filter (e.g., Fletcher‑32): 6 
+- Dataset‑level parity/ECC outside HDF5: 4
+
 ## Adoption and performance tradeoffs
+
+Built-in integrity verification appears to have strong pull, but performance overhead remains a key constraint. Most respondents would accept up to 10% overhead for security features; few demand near-zero overhead. 
 
 ![Integrity verification adoption willingness](./Willingness%20to%20adopt%20built-in%20integrity%20verification.png)
 
 ![Acceptable overhead](./Acceptable%20performance%20overhead%20for%20security%20features.png)
-
-
 
 ## Preliminary implications for HDF5 SSP SIG priorities 
 
