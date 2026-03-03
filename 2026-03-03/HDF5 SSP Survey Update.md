@@ -7,6 +7,13 @@ If you have not yet taken the [survey](https://forms.gle/nD6hmRUd9h5H2KM19), we 
 
 In today's clinic, I want to share a few observations.
 
+## ☝️ Don't forget
+
+- HDF5 library 2.1.0 is just around the corner
+- The [HDF5 SSP SIG](https://github.com/HDFGroup/hdf5-ssp-sig/wiki/HDF5-SSP-SIG) is meeting this Thursday at 11:00 AM Central Time. Join us!
+  - [Zoom link](https://us06web.zoom.us/j/82445234681)
+  - [Agenda](https://github.com/HDFGroup/hdf5-ssp-sig/wiki/2026)
+
 ## Summary
 
 So far we received 33 survey responses. Most questions had 26-31 answers (some optional fields). 
@@ -18,7 +25,7 @@ So far we received 33 survey responses. Most questions had 26-31 answers (some o
 - **Strong appetite for built-in integrity verification:** 17/31 (55%) would adopt immediately; most others are conditional on overhead. 
 - **Performance budget is modest:** 26/33 (79%) would accept up to 10% overhead for security features. 
 
-## Key takeaways
+## 🗝️ Key takeaways
 
 1. For 42\% of respondents, supply chain security (SBOM, transitive deps.) is a major or critical concern
 2. For 36\% of respondents, malformed/poisoned files (parser bugs) are a major or critical concern
@@ -32,7 +39,7 @@ So far we received 33 survey responses. Most questions had 26-31 answers (some o
 - Plan for *offline/air‑gapped* verification: 18 respondents selected this requirement (of 28 who answered).​
 - Strong appetite for built‑in integrity checks: 16 want metadata+data; 14 are conditional.​​
 
-## Who responded - roles, org. types, and geography (self‑reported)
+## 🌎 Who responded - roles, org. types, and geography (self‑reported)
 
 ### Roles (multi-select)
 
