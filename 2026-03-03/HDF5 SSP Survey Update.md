@@ -1,4 +1,6 @@
-# HDF5 SSP Survey Update
+# HDF5 Safety, Security, & Privacy (SSP) Survey Update
+
+(SSP? 🤔 Isn't that all the same? 👉 [Safety, Security, and Privacy in HDF5: A Shared Vocabulary](https://www.hdfgroup.org/2026/01/26/safety-security-and-privacy-in-hdf5-a-shared-vocabulary/))
 
 We have a [standing survey](https://forms.gle/nD6hmRUd9h5H2KM19) that helps us assess the needs of all sectors using HDF5—from open science to industry and government. The survey takes about 10–15 minutes.
 I want to start by thanking all who responded for their time and insights.
@@ -14,7 +16,7 @@ In today's clinic, I want to share a few observations.
   - [Zoom link](https://us06web.zoom.us/j/82445234681)
   - [Agenda](https://github.com/HDFGroup/hdf5-ssp-sig/wiki/2026)
 
-## Summary
+## 🧾 Summary
 
 So far we received 33 survey responses. Most questions had 26-31 answers (some optional fields). 
 
@@ -75,7 +77,6 @@ So far we received 33 survey responses. Most questions had 26-31 answers (some o
 - HPC (MPI/parallel I/O): 14 
 - Cloud/object storage (HSDS/S3): 7 
 - Edge/embedded: 4 
-
 
 ### Sensitive data frequency
 
