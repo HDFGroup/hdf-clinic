@@ -45,46 +45,23 @@ So far we received 33 survey responses. Most questions had 26-31 answers (some o
 
 ### Roles (multi-select)
 
-- Product/vendor: 5
-- HPC I/O specialist: 5
-- Security engineer/analyst: 5
-- Data engineer: 8
-- Researcher/PI: 11
-- Software developer: 19
+Product/vendor: 5 • HPC I/O specialist: 5 • Security engineer/analyst: 5 • Data engineer: 8 • Researcher/PI: 11 • Software developer: 19
 
 ### Organization type
 
-- Private company: 12 (36%) 
-- Government/National lab: 9 (27%) 
-- University: 7 (21%) 
-- Non-profit: 3 (9%) 
-- Independent consultant: 1 (3%)
-- Startup: 1 (3%) 
+Private company: 12 • Government: 9  • University: 7 • Non-profit: 3 • Independent consultant: 1 • Startup: 1 
 
 ### Region
 
-- North America: 12
-- Europe: 11
-- Asia-Pacific: 4
-- Africa: 2
-- Middle East: 1
-- Other: 1
+North America: 12 • Europe: 11 • Asia-Pacific: 4 • Africa: 2 • Middle East: 1 • Other: 1 (👽?)
 
 ### Where HDF5 is used (multi-select) 
 
-- Desktop/workstation: 27 
-- On-prem filesystems: 14 
-- HPC (MPI/parallel I/O): 14 
-- Cloud/object storage (HSDS/S3): 7 
-- Edge/embedded: 4 
+Desktop/workstation: 27 • On-prem filesystems: 14 • HPC (MPI/parallel I/O): 14 • Cloud/object storage (HSDS/S3): 7 • Edge/embedded: 4 
 
 ### Sensitive data frequency
 
-- Never: 12 (36%) 
-- Sometimes: 9 (27%) 
-- Rarely: 7 (21%) 
-- Often: 4 (12%) 
-- Always: 1 (3%) 
+Never: 12 • Sometimes: 9 • Rarely: 7 • Often: 4 • Always: 1
 
 ## Threat prioritization
 
