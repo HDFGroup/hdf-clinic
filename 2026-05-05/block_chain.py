@@ -47,7 +47,6 @@ ZERO_HASH = bytes(HASH_SIZE)
    if blocks are known not to exceed a certain size.
 """
 BLOCK_INDEX_DTYPE = np.dtype([
-    
     ("timestamp_ns", "<i8"),
     ("block_offset", "<u8"),
     ("block_length", "<u8"),
