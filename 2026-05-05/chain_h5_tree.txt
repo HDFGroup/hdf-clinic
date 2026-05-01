@@ -1,0 +1,36 @@
+chain.h5
++-- /                                      group
+    +-- chain/                             group
+        |
+        +-- attributes
+        |   +-- schema         = "blockchain.v1"    ascii string[13]
+        |   +-- schema_version = 1                  uint64
+        |   +-- hash_algo      = "SHA-256"          ascii string[7]
+        |   +-- n_blocks       = 8                  uint64
+        |   +-- byte_length    = 246                uint64
+        |   +-- head_hash      = 50:26:8b:1a:d2:56:cf:c2:4f:11:d8:7d:74:17:52:1e:
+        |                       24:09:81:53:cb:1f:1e:0f:e3:ef:9b:e8:60:c1:c5:ca
+        |
+        +-- HashAlgorithm                     committed datatype
+        |   +-- opaque[32], tag = "SHA-256"
+        |
+        +-- block_index                       dataset {16/Inf}
+        |   +-- dtype  = compound {
+        |   |              timestamp_ns: int64,
+        |   |              block_offset: uint64,
+        |   |              block_length: uint64
+        |   |           }
+        |   +-- chunks = {256}
+        |   +-- filter = gzip level 4
+        |   +-- rows   = 8 active, 8 unused capacity
+        |
+        +-- hash                              dataset {16/Inf}
+        |   +-- dtype  = /chain/HashAlgorithm
+        |   +-- chunks = {256}
+        |   +-- rows   = 8 active hashes, 8 zero-filled capacity hashes
+        |
+        +-- block_bytes                       dataset {1048576/Inf}
+            +-- dtype  = uint8
+            +-- chunks = {1048576}
+            +-- filter = gzip level 4
+            +-- bytes  = 246 active payload bytes, 1048330 unused capacity bytes

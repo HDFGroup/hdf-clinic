@@ -1,10 +1,26 @@
 '''
-A simple HDF5-backed block chain implementation.
+A simple HDF5-backed blockchain implementation.
 
-This gives you tamper-evident structure, NOT tamper-proof storage. Someone who
-can rewrite the HDF5 file can rewrite all hashes too. To strengthen it, store
-the final head_hash outside the file, sign each block hash with a private key,
-or use HDF5 SWMR/file locking rules if multiple writers/readers are involved.
+  ┌─────────────────────┐      ┌─────────────────────┐      ┌─────────────────────┐                                     
+  │      Block 0        │      │      Block 1        │      │      Block 2        │                                     
+  │     (Genesis)       │      │                     │      │                     │                                     
+  ├─────────────────────┤      ├─────────────────────┤      ├─────────────────────┤                                     
+  │ index:    0         │      │ index:    1         │      │ index:    2         │                                     
+  │ time:     t0        │      │ time:     t1        │      │ time:     t2        │                                     
+  │ data:    "alpha"    │      │ data:    "bravo"    │      │ data:    "charlie"  │                                     
+  │ prev:    0x0000…    │      │ prev:    0xA1B2…    │◀─┐   │ prev:    0xC3D4…    │◀─┐                                  
+  │ hash:    0xA1B2…    │──┐   │ hash:    0xC3D4…    │  │   │ hash:    0xE5F6…    │  │                                  
+  └─────────────────────┘  │   └─────────────────────┘  │   └─────────────────────┘  │                                  
+                           │                            │                            │                                  
+                           └────────────────────────────┘                            │                                  
+                                                                                     │                                  
+                                                                         head/tip ───┘
+
+This gives you tamper-evident ("was this changed?") structure, NOT tamper-proof
+("can this be changed?") storage. Someone who can rewrite the HDF5 file can
+rewrite all hashes too. To strengthen it, store the final head_hash outside
+the file, sign each block hash with a private key, or use HDF5 SWMR/file locking
+rules if multiple writers/readers are involved.
 
 Concurrency: this module assumes a single writer. HDF5 file locking (h5py
 default) prevents two writers from opening the same file simultaneously.
@@ -24,8 +40,14 @@ import numpy as np
 HASH_SIZE = hashlib.sha256().digest_size
 HASH_DTYPE = np.dtype(f"V{HASH_SIZE}")
 SHA256_TAG = b"SHA-256"
-SHA256_TYPE_NAME = b"hash_algo"
+SHA256_TYPE_NAME = b"HashAlgorithm"
 ZERO_HASH = bytes(HASH_SIZE)
+
+BLOCK_INDEX_DTYPE = np.dtype([
+    ("timestamp_ns", "<i8"),
+    ("block_offset", "<u8"),
+    ("block_length", "<u8"),
+])
 
 SCHEMA_NAME = "blockchain.v1"
 SCHEMA_NAME_BYTES = SCHEMA_NAME.encode("ascii")
@@ -156,7 +178,7 @@ def block_hash(index, timestamp_ns, prev_hash, payload_bytes):
 
 
 class Chain:
-    """HDF5-backed block chain with single-writer semantics.
+    """HDF5-backed blockchain with single-writer semantics.
 
     Use ``Chain.create(path)`` to create a new file and ``Chain.open(path, mode)``
     to open an existing one. Treat instances as context managers::
@@ -192,19 +214,11 @@ class Chain:
             chain.attrs["byte_length"] = np.uint64(0)
             write_head_hash_attr(chain, ZERO_HASH, sha256_type)
             chain.create_dataset(
-                "timestamp_ns", shape=(0,), maxshape=(None,),
-                dtype=np.int64, compression="gzip",
+                "block_index", shape=(0,), maxshape=(None,),
+                dtype=BLOCK_INDEX_DTYPE, compression="gzip",
             )
             chain.create_dataset(
                 "hash", shape=(0,), maxshape=(None,), dtype=sha256_type,
-            )
-            chain.create_dataset(
-                "block_offsets", shape=(0,), maxshape=(None,),
-                dtype=np.uint64, compression="gzip",
-            )
-            chain.create_dataset(
-                "block_lengths", shape=(0,), maxshape=(None,),
-                dtype=np.uint64, compression="gzip",
             )
             chain.create_dataset(
                 "block_bytes", shape=(0,), maxshape=(None,),
@@ -287,14 +301,12 @@ class Chain:
         timestamp_ns = time.time_ns()
         digest = block_hash(index, timestamp_ns, prev_hash, payload_bytes)
 
-        for name in ("timestamp_ns", "hash", "block_offsets", "block_lengths"):
+        for name in ("block_index", "hash"):
             ensure_capacity(chain[name], index + 1)
         ensure_capacity(chain["block_bytes"], byte_end, min_growth=1 << 20)
 
-        chain["timestamp_ns"][index] = timestamp_ns
+        chain["block_index"][index] = (timestamp_ns, byte_offset, length)
         write_hash(chain["hash"], index, digest, sha256_type)
-        chain["block_offsets"][index] = byte_offset
-        chain["block_lengths"][index] = length
         chain["block_bytes"][byte_offset:byte_end] = np.frombuffer(payload_bytes, dtype=np.uint8)
         chain.attrs["byte_length"] = np.uint64(byte_end)
 
@@ -312,11 +324,12 @@ class Chain:
             index += n
         if index < 0 or index >= n:
             raise IndexError(f"block index {index} out of range [0, {n})")
-        offset = int(chain["block_offsets"][index])
-        length = int(chain["block_lengths"][index])
+        entry = chain["block_index"][index]
+        offset = int(entry["block_offset"])
+        length = int(entry["block_length"])
         return Block(
             index=index,
-            timestamp_ns=int(chain["timestamp_ns"][index]),
+            timestamp_ns=int(entry["timestamp_ns"]),
             hash=read_hash(chain["hash"], index, self._sha256_type),
             payload_bytes=bytes(chain["block_bytes"][offset:offset + length]),
         )
@@ -327,16 +340,15 @@ class Chain:
         if n == 0:
             return
         byte_length = int(chain.attrs["byte_length"])
-        timestamps = chain["timestamp_ns"][:n]
-        offsets = chain["block_offsets"][:n]
-        lengths = chain["block_lengths"][:n]
+        block_index = chain["block_index"][:n]
         all_bytes = bytes(chain["block_bytes"][:byte_length])
         for i in range(n):
-            offset = int(offsets[i])
-            length = int(lengths[i])
+            entry = block_index[i]
+            offset = int(entry["block_offset"])
+            length = int(entry["block_length"])
             yield Block(
                 index=i,
-                timestamp_ns=int(timestamps[i]),
+                timestamp_ns=int(entry["timestamp_ns"]),
                 hash=read_hash(chain["hash"], i, self._sha256_type),
                 payload_bytes=all_bytes[offset:offset + length],
             )
@@ -354,19 +366,18 @@ class Chain:
                 return VerifyResult(False, None, "head_hash attr is non-zero on an empty chain")
             return VerifyResult(ok=True)
 
-        timestamps = chain["timestamp_ns"][:n]
-        offsets = chain["block_offsets"][:n]
-        lengths = chain["block_lengths"][:n]
+        block_index = chain["block_index"][:n]
         all_bytes = bytes(chain["block_bytes"][:byte_length])
 
         prev_hash = ZERO_HASH
         prev_ts = None
 
         for index in range(n):
-            byte_offset = int(offsets[index])
-            length = int(lengths[index])
+            entry = block_index[index]
+            byte_offset = int(entry["block_offset"])
+            length = int(entry["block_length"])
             byte_end = byte_offset + length
-            timestamp_ns = int(timestamps[index])
+            timestamp_ns = int(entry["timestamp_ns"])
 
             if byte_offset < 0 or length < 0 or byte_end > byte_length:
                 return VerifyResult(
