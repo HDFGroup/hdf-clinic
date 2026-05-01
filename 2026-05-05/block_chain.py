@@ -43,9 +43,11 @@ SHA256_TAG = b"SHA-256"
 SHA256_TYPE_NAME = b"HashAlgorithm"
 ZERO_HASH = bytes(HASH_SIZE)
 
+"""block_length is redundant but convenient. This could be a smaller unsigned type,
+   if blocks are known not to exceed a certain size.
+"""
 BLOCK_INDEX_DTYPE = np.dtype([
-    """block_length is redundant but convenient. This could be a smaller unsigned type,
-       if blocks are known not to exceed a certain size."""
+    
     ("timestamp_ns", "<i8"),
     ("block_offset", "<u8"),
     ("block_length", "<u8"),
