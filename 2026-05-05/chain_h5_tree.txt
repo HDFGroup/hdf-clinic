@@ -8,21 +8,26 @@ chain.h5
         |   +-- hash_algo      = "SHA-256"          ascii string[7]
         |   +-- n_blocks       = 8                  uint64
         |   +-- byte_length    = 246                uint64
-        |   +-- head_hash      = 50:26:8b:1a:d2:56:cf:c2:4f:11:d8:7d:74:17:52:1e:
-        |                       24:09:81:53:cb:1f:1e:0f:e3:ef:9b:e8:60:c1:c5:ca
+        |   +-- head_hash      = 3e:47:20:42:25:da:d4:02:db:29:e4:ee:18:bb:16:84:
+        |                       ef:b3:62:c5:9d:b3:57:b1:e7:f6:61:d5:b5:98:5c:e3
         |
         +-- HashAlgorithm                     committed datatype
         |   +-- opaque[32], tag = "SHA-256"
         |
         +-- block_index                       dataset {16/Inf}
         |   +-- dtype  = compound {
-        |   |              timestamp_ns: int64,
         |   |              block_offset: uint64,
-        |   |              block_length: uint64
+        |   |              block_length: uint16
         |   |           }
-        |   +-- chunks = {256}
+        |   +-- chunks = {1024}
         |   +-- filter = gzip level 4
         |   +-- rows   = 8 active, 8 unused capacity
+        |
+        +-- timestamp_ns                      dataset {16/Inf}
+        |   +-- dtype  = int64
+        |   +-- chunks = {1024}
+        |   +-- filter = gzip level 4
+        |   +-- rows   = 8 active timestamps, 8 unused capacity timestamps
         |
         +-- hash                              dataset {16/Inf}
         |   +-- dtype  = /chain/HashAlgorithm

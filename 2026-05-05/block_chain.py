@@ -47,9 +47,8 @@ ZERO_HASH = bytes(HASH_SIZE)
    if blocks are known not to exceed a certain size.
 """
 BLOCK_INDEX_DTYPE = np.dtype([
-    ("timestamp_ns", "<i8"),
     ("block_offset", "<u8"),
-    ("block_length", "<u8"),
+    ("block_length", "<u2"),
 ])
 
 SCHEMA_NAME = "blockchain.v1"
@@ -59,6 +58,7 @@ SCHEMA_VERSION = 1
 HASH_ALGO_NAME = "SHA-256"
 HASH_ALGO_NAME_BYTES = HASH_ALGO_NAME.encode("ascii")
 HASH_ALGO_DTYPE = h5py.string_dtype(encoding="ascii", length=len(HASH_ALGO_NAME_BYTES))
+BLOCK_LENGTH_MAX = np.iinfo(np.uint16).max
 DOMAIN_TAG = b"blockchain.v1\x00"
 
 
@@ -221,6 +221,10 @@ class Chain:
                 dtype=BLOCK_INDEX_DTYPE, compression="gzip",
             )
             chain.create_dataset(
+                "timestamp_ns", shape=(0,), maxshape=(None,),
+                dtype="<i8", compression="gzip",
+            )
+            chain.create_dataset(
                 "hash", shape=(0,), maxshape=(None,), dtype=sha256_type,
             )
             chain.create_dataset(
@@ -294,6 +298,10 @@ class Chain:
         index = int(chain.attrs["n_blocks"])
         byte_offset = int(chain.attrs["byte_length"])
         length = len(payload_bytes)
+        if length > BLOCK_LENGTH_MAX:
+            raise ValueError(
+                f"payload is {length} bytes; block_length uses uint16 and must be <= {BLOCK_LENGTH_MAX}"
+            )
         byte_end = byte_offset + length
 
         if index == 0:
@@ -304,11 +312,12 @@ class Chain:
         timestamp_ns = time.time_ns()
         digest = block_hash(index, timestamp_ns, prev_hash, payload_bytes)
 
-        for name in ("block_index", "hash"):
+        for name in ("block_index", "timestamp_ns", "hash"):
             ensure_capacity(chain[name], index + 1)
         ensure_capacity(chain["block_bytes"], byte_end, min_growth=1 << 20)
 
-        chain["block_index"][index] = (timestamp_ns, byte_offset, length)
+        chain["block_index"][index] = (byte_offset, length)
+        chain["timestamp_ns"][index] = timestamp_ns
         write_hash(chain["hash"], index, digest, sha256_type)
         chain["block_bytes"][byte_offset:byte_end] = np.frombuffer(payload_bytes, dtype=np.uint8)
         chain.attrs["byte_length"] = np.uint64(byte_end)
@@ -332,7 +341,7 @@ class Chain:
         length = int(entry["block_length"])
         return Block(
             index=index,
-            timestamp_ns=int(entry["timestamp_ns"]),
+            timestamp_ns=int(chain["timestamp_ns"][index]),
             hash=read_hash(chain["hash"], index, self._sha256_type),
             payload_bytes=bytes(chain["block_bytes"][offset:offset + length]),
         )
@@ -344,6 +353,7 @@ class Chain:
             return
         byte_length = int(chain.attrs["byte_length"])
         block_index = chain["block_index"][:n]
+        timestamps = chain["timestamp_ns"][:n]
         all_bytes = bytes(chain["block_bytes"][:byte_length])
         for i in range(n):
             entry = block_index[i]
@@ -351,7 +361,7 @@ class Chain:
             length = int(entry["block_length"])
             yield Block(
                 index=i,
-                timestamp_ns=int(entry["timestamp_ns"]),
+                timestamp_ns=int(timestamps[i]),
                 hash=read_hash(chain["hash"], i, self._sha256_type),
                 payload_bytes=all_bytes[offset:offset + length],
             )
@@ -370,6 +380,7 @@ class Chain:
             return VerifyResult(ok=True)
 
         block_index = chain["block_index"][:n]
+        timestamps = chain["timestamp_ns"][:n]
         all_bytes = bytes(chain["block_bytes"][:byte_length])
 
         prev_hash = ZERO_HASH
@@ -380,7 +391,7 @@ class Chain:
             byte_offset = int(entry["block_offset"])
             length = int(entry["block_length"])
             byte_end = byte_offset + length
-            timestamp_ns = int(entry["timestamp_ns"])
+            timestamp_ns = int(timestamps[index])
 
             if byte_offset < 0 or length < 0 or byte_end > byte_length:
                 return VerifyResult(
